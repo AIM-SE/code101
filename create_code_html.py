@@ -31,5 +31,5 @@ with open('tail.html') as f: tail = f.read()
 
 for example in os.listdir('code/'):
     res = create(head, example, tail)
-    with open(os.path.join('doc', example + ".html"), "w") as f:
+    with open(os.path.join('docs', example + ".html"), "w") as f:
         f.write(res)
