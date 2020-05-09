@@ -2,7 +2,12 @@ import os
 
 def create_block(path, name):
     res = ''
-    with open(os.path.join(path, name+".py")) as f:
+
+    filename = os.path.join(path, name+".py")
+    if not os.path.exists(filename):
+        return res
+
+    with open(filename) as f:
         res += '<code data-type="' + name +'">' + os.linesep
         res += f.read()
         res += '</code>' + os.linesep
